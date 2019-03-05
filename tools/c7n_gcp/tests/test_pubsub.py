@@ -77,3 +77,20 @@ class PubSubSubscriptionTest(BaseTest):
         pubsub_subscription_resource = policy.resource_manager.get_resource(
             {'project_id': project_id, 'name': pubsub_subscription_name})
         self.assertEqual(pubsub_subscription_resource['name'], pubsub_subscription_name)
+
+
+class PubSubSnapshotTest(BaseTest):
+
+    def test_pubsub_snapshot_query(self):
+        project_id = 'cloud-custodian'
+        pubsub_snapshot_name = 'projects/cloud-custodian/snapshots/custodian'
+        session_factory = self.replay_flight_data(
+            'pubsub-snapshot-query', project_id=project_id)
+
+        policy = self.load_policy(
+            {'name': 'gcp-pubsub-snapshot-dryrun',
+             'resource': 'gcp.pubsub-snapshot'},
+            session_factory=session_factory)
+
+        pubsub_snapshot_resources = policy.run()
+        self.assertEqual(pubsub_snapshot_resources[0]['name'], pubsub_snapshot_name)

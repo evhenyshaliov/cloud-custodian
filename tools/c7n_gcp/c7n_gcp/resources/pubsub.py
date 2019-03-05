@@ -51,3 +51,14 @@ class PubSubSubscription(QueryResourceManager):
         def get(client, resource_info):
             return client.execute_command(
                 'get', {'subscription': resource_info['name']})
+
+
+@resources.register('pubsub-snapshot')
+class PubSubSnapshot(QueryResourceManager):
+    class resource_type(TypeInfo):
+        service = 'pubsub'
+        version = 'v1'
+        component = 'projects.snapshots'
+        enum_spec = ('list', 'snapshots[]', None)
+        scope_template = 'projects/{}'
+        id = 'name'
