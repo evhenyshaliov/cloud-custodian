@@ -35,3 +35,21 @@ class LogSink(QueryResourceManager):
             return client.get('get', {
                 'sinkName': 'projects/{project_id}/sinks/{name}'.format(
                     **resource_info)})
+
+
+@resources.register('log-projects-sink')
+class LogProjectSink(QueryResourceManager):
+
+    class resource_type(TypeInfo):
+        service = 'logging'
+        version = 'v2'
+        component = 'projects.sinks'
+        enum_spec = ('list', 'sinks[]', None)
+        scope_key = 'parent'
+        scope_template = "projects/{}"
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query('get', {
+                'sinkName': 'projects/{project_id}/sinks/{name}'.format(
+                    **resource_info)})
