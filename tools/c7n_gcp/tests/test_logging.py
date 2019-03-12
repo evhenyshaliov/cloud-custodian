@@ -39,3 +39,29 @@ class LogProjectSinkTest(BaseTest):
             "project_id": project_id,
         })
         self.assertEqual(sink['name'], sink_name)
+
+
+class LogSinkTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('logsink', project_id)
+        p = self.load_policy({
+            'name': 'logsink',
+            'resource': 'gcp.logsink'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 2)
+
+    def test_get_log_sink(self):
+        project_id = 'test-project-232910'
+        sink_name = "storage"
+        factory = self.replay_flight_data(
+            'log-sink-resource', project_id)
+        p = self.load_policy({'name': 'logsink', 'resource': 'gcp.logsink'},
+                             session_factory=factory)
+        sink = p.resource_manager.get_resource({
+            "name": sink_name,
+            "project_id": project_id,
+        })
+        self.assertEqual(sink['name'], sink_name)
