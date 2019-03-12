@@ -31,6 +31,7 @@ import c7n_gcp.resources.service
 import c7n_gcp.resources.source
 import c7n_gcp.resources.storage
 import c7n_gcp.resources.sql  # noqa: F401
+import c7n_gcp.resources.kms
 
 from c7n_gcp.provider import resources as gcp_resources
 
