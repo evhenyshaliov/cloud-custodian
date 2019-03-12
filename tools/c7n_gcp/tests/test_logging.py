@@ -170,3 +170,16 @@ class LogExclusionTest(BaseTest):
             "type": type,
         })
         self.assertEqual(resource['name'], exclusion_name)
+
+
+class LogTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('log', project_id)
+        p = self.load_policy({
+            'name': 'log',
+            'resource': 'gcp.log'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 3)
