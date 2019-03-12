@@ -1,0 +1,1891 @@
+{
+  "body": {
+    "nextPageToken": "CGQ", 
+    "resourceDescriptors": [
+      {
+        "displayName": "GCE VM Instance", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The numeric VM instance identifier assigned by Compute Engine.", 
+            "key": "instance_id"
+          }, 
+          {
+            "description": "The Compute Engine zone in which the VM is running.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "gce_instance", 
+        "description": "A virtual machine instance hosted in Google Compute Engine (GCE)."
+      }, 
+      {
+        "displayName": "GAE Application", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The service/module name.", 
+            "key": "module_id"
+          }, 
+          {
+            "description": "The version name.", 
+            "key": "version_id"
+          }
+        ], 
+        "type": "gae_app", 
+        "description": "An application running in Google App Engine (GAE)."
+      }, 
+      {
+        "displayName": "Uptime Check URL", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The hostname or IP address of the check.", 
+            "key": "host"
+          }
+        ], 
+        "type": "uptime_url", 
+        "description": "An Uptime Monitoring check against a custom URL."
+      }, 
+      {
+        "displayName": "Cloud Tasks Queue", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the queue.", 
+            "key": "queue_id"
+          }, 
+          {
+            "description": "The target type the queue is dispatching to.", 
+            "key": "target_type"
+          }
+        ], 
+        "type": "cloud_tasks_queue", 
+        "description": "A queue in Cloud Tasks."
+      }, 
+      {
+        "displayName": "Cloud SQL Database", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The ID of the database.", 
+            "key": "database_id"
+          }, 
+          {
+            "description": "The Google Cloud SQL region in which the database is running.", 
+            "key": "region"
+          }
+        ], 
+        "type": "cloudsql_database", 
+        "description": "A database hosted in Google Cloud SQL."
+      }, 
+      {
+        "displayName": "GCE Disk", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the disk.", 
+            "key": "disk_id"
+          }, 
+          {
+            "description": "The Compute Engine zone where the disk resides.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "gce_disk", 
+        "description": "A disk belonging to a Google Compute Engine (GCE) instance."
+      }, 
+      {
+        "displayName": "Cloud VPN Gateway", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The VPN Gateway ID.", 
+            "key": "gateway_id"
+          }, 
+          {
+            "description": "The region in which the VPN Gateway is running.", 
+            "key": "region"
+          }
+        ], 
+        "type": "vpn_gateway", 
+        "description": "A Cloud VPN gateway."
+      }, 
+      {
+        "displayName": "Produced API", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The API service name, such as \"cloudsql.googleapis.com\".", 
+            "key": "service"
+          }, 
+          {
+            "description": "The API method, such as \"disks.list\".", 
+            "key": "method"
+          }, 
+          {
+            "description": "The API version, such as \"v1\".", 
+            "key": "version"
+          }, 
+          {
+            "description": "The service specific notion of location. This can be the name of a zone, region, or \"global\".", 
+            "key": "location"
+          }
+        ], 
+        "type": "api", 
+        "description": "An API provided by the producer."
+      }, 
+      {
+        "displayName": "Consumed API", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The API service name, such as \"cloudsql.googleapis.com\".", 
+            "key": "service"
+          }, 
+          {
+            "description": "The API method name, such as \"disks.list\".", 
+            "key": "method"
+          }, 
+          {
+            "description": "The API version, such as \"v1\".", 
+            "key": "version"
+          }, 
+          {
+            "description": "The client credential ID, such as an API key ID or the OAuth client ID.", 
+            "key": "credential_id"
+          }, 
+          {
+            "description": "The service specific notion of location. This can be a name of a zone or region. If a service does not have any notion of zones then \"global\" can be used.", 
+            "key": "location"
+          }
+        ], 
+        "type": "consumed_api", 
+        "description": "An API used by customers."
+      }, 
+      {
+        "displayName": "GCS Bucket", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "An immutable name of the bucket.", 
+            "key": "bucket_name"
+          }, 
+          {
+            "description": "Location of the bucket.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gcs_bucket", 
+        "description": "A Google Cloud Storage (GCS) bucket."
+      }, 
+      {
+        "displayName": "Cloud Source Repository", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the repository.", 
+            "key": "name"
+          }
+        ], 
+        "type": "csr_repository", 
+        "description": "A repository in Google Cloud Source Repositories."
+      }, 
+      {
+        "displayName": "Cloud Spanner Instance", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "An immutable identifier for an instance.", 
+            "key": "instance_id"
+          }, 
+          {
+            "description": "Cloud Spanner region.", 
+            "key": "location"
+          }, 
+          {
+            "description": "Instance config for the instance.", 
+            "key": "instance_config"
+          }
+        ], 
+        "type": "spanner_instance", 
+        "description": "A Cloud Spanner instance."
+      }, 
+      {
+        "displayName": "Cloud ML Model Version", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "An immutable identifier for a model.", 
+            "key": "model_id"
+          }, 
+          {
+            "description": "An immutable identifier for a version.", 
+            "key": "version_id"
+          }, 
+          {
+            "description": "Cloud ML region.", 
+            "key": "region"
+          }
+        ], 
+        "type": "cloudml_model_version", 
+        "description": "A Google Cloud ML model version."
+      }, 
+      {
+        "displayName": "Cloud Dataproc Cluster", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The user-specified cluster name.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "The generated cluster id.", 
+            "key": "cluster_uuid"
+          }, 
+          {
+            "description": "The Cloud Dataproc region in which the cluster is running.", 
+            "key": "region"
+          }
+        ], 
+        "type": "cloud_dataproc_cluster", 
+        "description": "A Dataproc cluster with separate cluster name and id labels."
+      }, 
+      {
+        "displayName": "Cloud Pub/Sub Topic", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The identifier of the topic, such as \"my-topic\".", 
+            "key": "topic_id"
+          }
+        ], 
+        "type": "pubsub_topic", 
+        "description": "A topic in Google Cloud Pub/Sub."
+      }, 
+      {
+        "displayName": "Cloud Pub/Sub Subscription", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The identifier of the subscription, such as \"my-subscription\".", 
+            "key": "subscription_id"
+          }
+        ], 
+        "type": "pubsub_subscription", 
+        "description": "A subscription in Google Cloud Pub/Sub."
+      }, 
+      {
+        "displayName": "Cloud IoT Registry", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The user-defined string identifier of the device registry.", 
+            "key": "device_registry_id"
+          }, 
+          {
+            "description": "The cloud region of the device registry.", 
+            "key": "location"
+          }
+        ], 
+        "type": "cloudiot_device_registry", 
+        "description": "A Device Registry in Google Cloud IoT."
+      }, 
+      {
+        "displayName": "Cloud IoT Device", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "valueType": "INT64", 
+            "description": "The unique numeric identifier of the device.", 
+            "key": "device_num_id"
+          }, 
+          {
+            "description": "The user-defined string identifier of the device registry.", 
+            "key": "device_registry_id"
+          }, 
+          {
+            "description": "The cloud region of the device registry.", 
+            "key": "location"
+          }
+        ], 
+        "type": "cloudiot_device", 
+        "description": "A Device in Google Cloud IoT."
+      }, 
+      {
+        "displayName": "Cloud Function", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The short function name.", 
+            "key": "function_name"
+          }, 
+          {
+            "description": "The region in which the function is running.", 
+            "key": "region"
+          }
+        ], 
+        "type": "cloud_function", 
+        "description": "A function in Google Cloud Functions."
+      }, 
+      {
+        "displayName": "Cloud Build", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique id of the build.", 
+            "key": "build_id"
+          }, 
+          {
+            "description": "The unique id of the build trigger.", 
+            "key": "build_trigger_id"
+          }
+        ], 
+        "type": "build", 
+        "description": "A build in Cloud Build."
+      }, 
+      {
+        "displayName": "Cloud Memorystore Redis Instance", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The Google Cloud region in which the managed instance is running.", 
+            "key": "region"
+          }, 
+          {
+            "description": "The ID of the managed instance.", 
+            "key": "instance_id"
+          }, 
+          {
+            "description": "The ID of a Redis node within the managed instance.", 
+            "key": "node_id"
+          }
+        ], 
+        "type": "redis_instance", 
+        "description": "A Redis instance hosted on Google Cloud Memorystore."
+      }, 
+      {
+        "displayName": "Logging export sink", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique name of the sink.", 
+            "key": "name"
+          }, 
+          {
+            "description": "The destination of the sink.", 
+            "key": "destination"
+          }
+        ], 
+        "type": "logging_sink", 
+        "description": "An export sink in Stackdriver Logging."
+      }, 
+      {
+        "displayName": "Log Exclusion", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique name of the exclusion.", 
+            "key": "name"
+          }
+        ], 
+        "type": "logging_exclusion", 
+        "description": "An exclusion in Stackdriver Logging."
+      }, 
+      {
+        "displayName": "Metric Type", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the metric type, such as \"logging.googleapis.com/my-metric-name\".", 
+            "key": "name"
+          }
+        ], 
+        "type": "metric", 
+        "description": "A Stackdriver Monitoring metric type."
+      }, 
+      {
+        "displayName": "Managed DNS Zone", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the ManagedZone.", 
+            "key": "zone_name"
+          }, 
+          {
+            "description": "The location field is provided for compatibility with other GCP services. Its value is always set to 'global'", 
+            "key": "location"
+          }
+        ], 
+        "type": "dns_managed_zone", 
+        "description": "A ManagedZone in the Google Cloud DNS service."
+      }, 
+      {
+        "displayName": "Cloud DNS Policy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the Policy.", 
+            "key": "policy_name"
+          }, 
+          {
+            "description": "The location field is provided for compatibility with other GCP services. Its value is always set to 'global'", 
+            "key": "location"
+          }
+        ], 
+        "type": "dns_policy", 
+        "description": "A Policy in the Google Cloud DNS service."
+      }, 
+      {
+        "displayName": "Cloud DNS Query", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The DNS name managed by Cloud DNS to be resolved (e.g. the zone name, policy name, internal domain name). External names will have the value \"external\"", 
+            "key": "target_name"
+          }, 
+          {
+            "description": "The GCP zone where the DNS request was received (e.g. us-east1, us-west1).", 
+            "key": "location"
+          }, 
+          {
+            "description": "The target of the resolution of the DNS query (e.g. public-zone, private-zone, external).", 
+            "key": "target_type"
+          }, 
+          {
+            "description": "Source of the query (e.g. gce-vm, internet).", 
+            "key": "source_type"
+          }
+        ], 
+        "type": "dns_query", 
+        "description": "A DNS query handled by the Google Cloud DNS service."
+      }, 
+      {
+        "displayName": "Audited Resource", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the API service generating the audit log.", 
+            "key": "service"
+          }, 
+          {
+            "description": "The name of the API method generating the audit log.", 
+            "key": "method"
+          }
+        ], 
+        "type": "audited_resource", 
+        "description": "A Google Cloud resource that produces an audit log."
+      }, 
+      {
+        "displayName": "Google Assistant Action", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Stringified version ID of the assistant agent.", 
+            "key": "version_id"
+          }, 
+          {
+            "description": "Action ID of the assistant agent.", 
+            "key": "action_id"
+          }
+        ], 
+        "type": "assistant_action", 
+        "description": "An Action in a Google Assistant App."
+      }, 
+      {
+        "displayName": "Generic Node", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The GCP or AWS region in which data about the resource is stored. For example, \"us-east1-a\" (GCP) or \"aws:us-east-1a\" (AWS).", 
+            "key": "location"
+          }, 
+          {
+            "description": "A namespace identifier, such as a cluster name.", 
+            "key": "namespace"
+          }, 
+          {
+            "description": "A unique identifier for the node within the namespace, such as a hostname or IP address.", 
+            "key": "node_id"
+          }
+        ], 
+        "type": "generic_node", 
+        "description": "A generic node identifies a machine or other computational resource for which no more specific resource type is applicable. The label values must uniquely identify the node."
+      }, 
+      {
+        "displayName": "Generic Task", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The GCP or AWS region in which data about the resource is stored. For example, \"us-east1-a\" (GCP) or \"aws:us-east-1a\" (AWS).", 
+            "key": "location"
+          }, 
+          {
+            "description": "A namespace identifier, such as a cluster name.", 
+            "key": "namespace"
+          }, 
+          {
+            "description": "An identifier for a grouping of related tasks, such as the name of a microservice or distributed batch job.", 
+            "key": "job"
+          }, 
+          {
+            "description": "A unique identifier for the task within the namespace and job, such as a replica index identifying the task within the job.", 
+            "key": "task_id"
+          }
+        ], 
+        "type": "generic_task", 
+        "description": "A generic task identifies an application process for which no more specific resource is applicable, such as a process scheduled by a custom orchestration system. The label values must uniquely identify the task."
+      }, 
+      {
+        "displayName": "Kubernetes Container", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The physical location of the cluster that contains the container.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The name of the cluster that the container is running in.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "The name of the namespace that the container is running in.", 
+            "key": "namespace_name"
+          }, 
+          {
+            "description": "The name of the pod that the container is running in.", 
+            "key": "pod_name"
+          }, 
+          {
+            "description": "The name of the container.", 
+            "key": "container_name"
+          }
+        ], 
+        "type": "k8s_container", 
+        "description": "A Kubernetes container instance."
+      }, 
+      {
+        "displayName": "Kubernetes Pod", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The physical location of the cluster that contains the pod.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The name of the cluster that the pod is running in.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "The name of the namespace that the pod is running in.", 
+            "key": "namespace_name"
+          }, 
+          {
+            "description": "The name of the pod.", 
+            "key": "pod_name"
+          }
+        ], 
+        "type": "k8s_pod", 
+        "description": "A Kubernetes pod instance."
+      }, 
+      {
+        "displayName": "Kubernetes Node", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The physical location of the cluster that containsthe node.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The name of the cluster that the node is a part of.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "The name of the node.", 
+            "key": "node_name"
+          }
+        ], 
+        "type": "k8s_node", 
+        "description": "A Kubernetes node instance."
+      }, 
+      {
+        "displayName": "Kubernetes Cluster", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The physical location of the cluster.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The name of the cluster.", 
+            "key": "cluster_name"
+          }
+        ], 
+        "type": "k8s_cluster", 
+        "description": "A Kubernetes cluster. It contains Kubernetes audit logs from the cluster."
+      }, 
+      {
+        "displayName": "Cloud Scheduler Job", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The region of the job.", 
+            "key": "location"
+          }, 
+          {
+            "description": "Identifier of the job.", 
+            "key": "job_id"
+          }
+        ], 
+        "type": "cloud_scheduler_job", 
+        "description": "A Cloud Scheduler Job."
+      }, 
+      {
+        "displayName": "Cloud Composer Environment", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The Cloud Composer location in which the environment is running.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The user-specified environment name.", 
+            "key": "environment_name"
+          }
+        ], 
+        "type": "cloud_composer_environment", 
+        "description": "A Composer environment runs the managed Apache Airflow service."
+      }, 
+      {
+        "displayName": "Network Security Policy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique user provided name of the security policy.", 
+            "key": "policy_name"
+          }
+        ], 
+        "type": "network_security_policy", 
+        "description": "A network security policy."
+      }, 
+      {
+        "displayName": "GCE Subnetwork", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the subnetwork.", 
+            "key": "subnetwork_id"
+          }, 
+          {
+            "description": "The unique user provided name of the subnetwork.", 
+            "key": "subnetwork_name"
+          }, 
+          {
+            "description": "Location of the resource.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_subnetwork", 
+        "description": "A Google Compute Engine (GCE) subnetwork."
+      }, 
+      {
+        "displayName": "Identity Toolkit Project", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }
+        ], 
+        "type": "identitytoolkit_project", 
+        "description": "An Identity Toolkit project."
+      }, 
+      {
+        "displayName": "Identity Toolkit Tenant", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the tenant.", 
+            "key": "tenant_name"
+          }
+        ], 
+        "type": "identitytoolkit_tenant", 
+        "description": "An Identity Toolkit tenant."
+      }, 
+      {
+        "displayName": "GCE Node Group", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the node group.", 
+            "key": "node_group_id"
+          }, 
+          {
+            "description": "GCE zone of the node group.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "gce_node_group", 
+        "description": "A Google Compute Engine (GCE) node group."
+      }, 
+      {
+        "displayName": "GCE Node Template", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the node template.", 
+            "key": "node_template_id"
+          }, 
+          {
+            "description": "GCE region of the node template.", 
+            "key": "region"
+          }
+        ], 
+        "type": "gce_node_template", 
+        "description": "A Google Compute Engine (GCE) node template."
+      }, 
+      {
+        "displayName": "GCE Resource Policy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the resource policy.", 
+            "key": "resource_policy_id"
+          }, 
+          {
+            "description": "GCE region of the resource policy.", 
+            "key": "region"
+          }
+        ], 
+        "type": "gce_resource_policy", 
+        "description": "A Google Compute Engine (GCE) resource policy."
+      }, 
+      {
+        "displayName": "Global", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }
+        ], 
+        "type": "global", 
+        "description": "A resource type used to indicate that a log is not associated with any specific resource."
+      }, 
+      {
+        "displayName": "Dataflow Step", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The ID of the job.", 
+            "key": "job_id"
+          }, 
+          {
+            "description": "The ID of the step.", 
+            "key": "step_id"
+          }, 
+          {
+            "description": "The name of the job.", 
+            "key": "job_name"
+          }, 
+          {
+            "description": "The region in which the job is running.", 
+            "key": "region"
+          }
+        ], 
+        "type": "dataflow_step", 
+        "description": "A step in a Dataflow job."
+      }, 
+      {
+        "displayName": "Apps Script Function", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The invocation type.", 
+            "key": "invocation_type"
+          }, 
+          {
+            "description": "The function name.", 
+            "key": "function_name"
+          }
+        ], 
+        "type": "app_script_function", 
+        "description": "An Apps Script function."
+      }, 
+      {
+        "displayName": "Dataproc Cluster", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The cluster ID, concatenated from the cluster name and uuid", 
+            "key": "cluster_id"
+          }, 
+          {
+            "description": "The GCE zone in which the instance is running.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "dataproc_cluster", 
+        "description": "A Dataproc cluster."
+      }, 
+      {
+        "displayName": "Cloud ML Job", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The job identifier.", 
+            "key": "job_id"
+          }, 
+          {
+            "description": "The task name.", 
+            "key": "task_name"
+          }
+        ], 
+        "type": "ml_job", 
+        "description": "A Cloud Machine Learning job."
+      }, 
+      {
+        "displayName": "BigQuery", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }
+        ], 
+        "type": "bigquery_resource", 
+        "description": "A BigQuery resource."
+      }, 
+      {
+        "displayName": "GKE Container", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "An immutable name for the cluster the container is running in.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "Immutable ID of the cluster namespace the container is running in.", 
+            "key": "namespace_id"
+          }, 
+          {
+            "description": "Immutable ID of the GCE instance the container is running in.", 
+            "key": "instance_id"
+          }, 
+          {
+            "description": "Immutable ID of the pod the container is running in.", 
+            "key": "pod_id"
+          }, 
+          {
+            "description": "Immutable name of the container.", 
+            "key": "container_name"
+          }, 
+          {
+            "description": "The GCE zone in which the instance is running.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "container", 
+        "description": "A Google Container Engine (GKE) container instance."
+      }, 
+      {
+        "displayName": "GKE Cluster Operations", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the GKE Cluster.", 
+            "key": "cluster_name"
+          }, 
+          {
+            "description": "The location in which the GKE Cluster is running.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gke_cluster", 
+        "description": "A Google Container Engine (GKE) Cluster. It contains events and audit logs about cluster operations."
+      }, 
+      {
+        "displayName": "GKE Node Pool Operations", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the GKE Node Pool.", 
+            "key": "nodepool_name"
+          }, 
+          {
+            "description": "The location in which the GKE Cluster is running.", 
+            "key": "location"
+          }, 
+          {
+            "description": "The name of the GKE Cluster to which this Node Pool belongs.", 
+            "key": "cluster_name"
+          }
+        ], 
+        "type": "gke_nodepool", 
+        "description": "A Google Container Engine (GKE) Node Pool. It contains audit logs about Node Pool operations."
+      }, 
+      {
+        "displayName": "Cloud Debugger", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The application to which the debugger is attached.", 
+            "key": "app"
+          }
+        ], 
+        "type": "cloud_debugger_resource", 
+        "description": "A Google Cloud Debugger resource."
+      }, 
+      {
+        "displayName": "Cloud HTTP Load Balancer", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The name of the forwarding rule.", 
+            "key": "forwarding_rule_name"
+          }, 
+          {
+            "description": "The name of the urlmap.", 
+            "key": "url_map_name"
+          }, 
+          {
+            "description": "The name of the target proxy.", 
+            "key": "target_proxy_name"
+          }, 
+          {
+            "description": "The name of the backend service. Currently unpopulated.", 
+            "key": "backend_service_name"
+          }, 
+          {
+            "description": "The zone in which the load balancer is running.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "http_load_balancer", 
+        "description": "A Cloud HTTP Load Balancer Instance."
+      }, 
+      {
+        "displayName": "Amazon EC2 Instance", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project under which data is stored for the AWS account specified in the aws_account label, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The VM instance identifier assigned by AWS.", 
+            "key": "instance_id"
+          }, 
+          {
+            "description": "The AWS account number under which the VM is running.", 
+            "key": "aws_account"
+          }, 
+          {
+            "description": "The AWS region in which the VM is running. Supported AWS region values are listed by service at http://docs.aws.amazon.com/general/latest/gr/rande.html. The value supplied for this label must be prefixed with 'aws:' (for example, 'aws:us-east-1' is a valid value while 'us-east-1' is not).", 
+            "key": "region"
+          }
+        ], 
+        "type": "aws_ec2_instance", 
+        "description": "A VM instance in Amazon EC2."
+      }, 
+      {
+        "displayName": "Cloud Billing Account", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique id of the billing account.", 
+            "key": "account_id"
+          }
+        ], 
+        "type": "billing_account", 
+        "description": "A Cloud Billing Account."
+      }, 
+      {
+        "displayName": "OAuth2 Brand", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "valueType": "INT64", 
+            "description": "The unique id of the brand.", 
+            "key": "brand_id"
+          }
+        ], 
+        "type": "client_auth_config_brand", 
+        "description": "Consent screen data shown to users during three-legged OAuth2 flows."
+      }, 
+      {
+        "displayName": "OAuth2 Client", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique id of the client.", 
+            "key": "client_id"
+          }
+        ], 
+        "type": "client_auth_config_client", 
+        "description": "A client used in OAuth2 flows."
+      }, 
+      {
+        "displayName": "GCE Target Pool", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the target pool.", 
+            "key": "target_pool_id"
+          }, 
+          {
+            "description": "GCE zone where the pool resides.", 
+            "key": "zone"
+          }
+        ], 
+        "type": "gce_target_pool", 
+        "description": "A Google Compute Engine (GCE) target pool."
+      }, 
+      {
+        "displayName": "GCE Firewall Rule", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the firewall rule.", 
+            "key": "firewall_rule_id"
+          }
+        ], 
+        "type": "gce_firewall_rule", 
+        "description": "A Google Compute Engine (GCE) firewall rule."
+      }, 
+      {
+        "displayName": "GCE Forwarding Rule", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the forewarding rule.", 
+            "key": "forwarding_rule_id"
+          }, 
+          {
+            "description": "GCE region where the forwarding rule resides.", 
+            "key": "region"
+          }
+        ], 
+        "type": "gce_forwarding_rule", 
+        "description": "A Google Compute Engine (GCE) Forwarding Rule."
+      }, 
+      {
+        "displayName": "GCE Network", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the network.", 
+            "key": "network_id"
+          }
+        ], 
+        "type": "gce_network", 
+        "description": "A Google Compute Engine (GCE) network."
+      }, 
+      {
+        "displayName": "GCE Route", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the route.", 
+            "key": "route_id"
+          }
+        ], 
+        "type": "gce_route", 
+        "description": "A Google Compute Engine (GCE) route."
+      }, 
+      {
+        "displayName": "GCE Reserved Address", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the reserved address.", 
+            "key": "reserved_address_id"
+          }, 
+          {
+            "description": "Global or GCE region containing the reserved address", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_reserved_address", 
+        "description": "A Google Compute Engine reserved address."
+      }, 
+      {
+        "displayName": "GCE Autoscaler", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the autoscaler.", 
+            "key": "autoscaler_id"
+          }, 
+          {
+            "description": "GCE zone or region where the autoscaler is running.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_autoscaler", 
+        "description": "A Google Compute Engine (GCE) autoscaler."
+      }, 
+      {
+        "displayName": "GCE Backend Service", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the backend service.", 
+            "key": "backend_service_id"
+          }, 
+          {
+            "description": "Global or GCE region containing the backend service", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_backend_service", 
+        "description": "A Google Compute Engine (GCE) backend service."
+      }, 
+      {
+        "displayName": "GCE Backend Bucket", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the backend bucket.", 
+            "key": "backend_bucket_id"
+          }
+        ], 
+        "type": "gce_backend_bucket", 
+        "description": "A Google Compute Engine (GCE) backend bucket."
+      }, 
+      {
+        "displayName": "GCE Client SSL Policy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the client SSL policy.", 
+            "key": "client_ssl_policy_id"
+          }
+        ], 
+        "type": "gce_client_ssl_policy", 
+        "description": "A Google Compute Engine (GCE) client SSL policy."
+      }, 
+      {
+        "displayName": "GCE Committed Use Discount", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the committed use discount.", 
+            "key": "commitment_id"
+          }, 
+          {
+            "description": "GCE region where the committed use discount is active.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_commitment", 
+        "description": "A Google Compute Engine (GCE) committed use discount."
+      }, 
+      {
+        "displayName": "GCE License", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the license.", 
+            "key": "license_id"
+          }
+        ], 
+        "type": "gce_license", 
+        "description": "A Google Compute Engine (GCE) license."
+      }, 
+      {
+        "displayName": "GCE Health Check", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the health check.", 
+            "key": "health_check_id"
+          }
+        ], 
+        "type": "gce_health_check", 
+        "description": "A Google Compute Engine (GCE) health check."
+      }, 
+      {
+        "displayName": "GCE URL Map", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the url map.", 
+            "key": "url_map_id"
+          }
+        ], 
+        "type": "gce_url_map", 
+        "description": "A Google Compute Engine (GCE) URL map."
+      }, 
+      {
+        "displayName": "GCE Project", 
+        "labels": [
+          {
+            "description": "GCE specific numeric identifier of the GCE project resource.", 
+            "key": "project_id"
+          }
+        ], 
+        "type": "gce_project", 
+        "description": "A Google Compute Engine (GCE) project resource."
+      }, 
+      {
+        "displayName": "GCE Snapshot", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the snapshot.", 
+            "key": "snapshot_id"
+          }
+        ], 
+        "type": "gce_snapshot", 
+        "description": "A Google Compute Engine (GCE) snapshot."
+      }, 
+      {
+        "displayName": "GCE SSL Certificate", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the SSL certificate.", 
+            "key": "ssl_certificate_id"
+          }, 
+          {
+            "description": "The unique user provided name of the SSL Certificate.", 
+            "key": "ssl_certificate_name"
+          }
+        ], 
+        "type": "gce_ssl_certificate", 
+        "description": "A Google Compute Engine (GCE) SSL certificate."
+      }, 
+      {
+        "displayName": "GCE Image", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique numerical identifier of the image.", 
+            "key": "image_id"
+          }
+        ], 
+        "type": "gce_image", 
+        "description": "A Google Compute Engine (GCE) image resource."
+      }, 
+      {
+        "displayName": "GCE Instance Group", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the instance group.", 
+            "key": "instance_group_id"
+          }, 
+          {
+            "description": "The unique user provided name of the instance group.", 
+            "key": "instance_group_name"
+          }, 
+          {
+            "description": "GCE zone containing the instance group.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_instance_group", 
+        "description": "A Google Compute Engine (GCE) instance group resource."
+      }, 
+      {
+        "displayName": "GCE Instance Group Manager", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the instance group manager.", 
+            "key": "instance_group_manager_id"
+          }, 
+          {
+            "description": "The unique user provided name of the instance group manager.", 
+            "key": "instance_group_manager_name"
+          }, 
+          {
+            "description": "GCE zone or region where the instance group manager is located.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_instance_group_manager", 
+        "description": "A Google Compute Engine (GCE) instance group manager resource."
+      }, 
+      {
+        "displayName": "GCE Instance Template", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the instance template.", 
+            "key": "instance_template_id"
+          }, 
+          {
+            "description": "The unique user provided name of the instance template.", 
+            "key": "instance_template_name"
+          }
+        ], 
+        "type": "gce_instance_template", 
+        "description": "A Google Compute Engine (GCE) instance template resource."
+      }, 
+      {
+        "displayName": "GCE Operation", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique user provided name of the operation.", 
+            "key": "operation_name"
+          }, 
+          {
+            "description": "Location of the resource.", 
+            "key": "location"
+          }
+        ], 
+        "type": "gce_operation", 
+        "description": "A Google Compute Engine (GCE) operation resource."
+      }, 
+      {
+        "displayName": "GCE Target HTTP Proxy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the target http proxy.", 
+            "key": "target_http_proxy_id"
+          }
+        ], 
+        "type": "gce_target_http_proxy", 
+        "description": "A Google Compute Engine (GCE) target http proxy."
+      }, 
+      {
+        "displayName": "GCE Target HTTPS Proxy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the target https proxy.", 
+            "key": "target_https_proxy_id"
+          }
+        ], 
+        "type": "gce_target_https_proxy", 
+        "description": "A Google Compute Engine (GCE) target https proxy."
+      }, 
+      {
+        "displayName": "GCE Target SSL Proxy", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the target ssl proxy.", 
+            "key": "target_ssl_proxy_id"
+          }
+        ], 
+        "type": "gce_target_ssl_proxy", 
+        "description": "A Google Compute Engine (GCE) target SSL proxy."
+      }, 
+      {
+        "displayName": "Cloud VPN Tunnel", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique numerical identifier of the VPN tunnel.", 
+            "key": "tunnel_id"
+          }, 
+          {
+            "description": "The unique user provided name of the VPN tunnel.", 
+            "key": "tunnel_name"
+          }, 
+          {
+            "description": "Location of the Cloud VPN Tunnel.", 
+            "key": "location"
+          }
+        ], 
+        "type": "vpn_tunnel", 
+        "description": "A Cloud VPN tunnel."
+      }, 
+      {
+        "displayName": "GCE Router", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the router.", 
+            "key": "router_id"
+          }, 
+          {
+            "description": "Region of the router.", 
+            "key": "region"
+          }
+        ], 
+        "type": "gce_router", 
+        "description": "A Google Compute Engine (GCE) router."
+      }, 
+      {
+        "displayName": "Log stream", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the log.", 
+            "key": "name"
+          }
+        ], 
+        "type": "logging_log", 
+        "description": "A Google Cloud Logging log."
+      }, 
+      {
+        "displayName": "Google Organization", 
+        "labels": [
+          {
+            "valueType": "INT64", 
+            "description": "Numeric id of the organization.", 
+            "key": "organization_id"
+          }
+        ], 
+        "type": "organization", 
+        "description": "A Google Cloud Platform organization."
+      }, 
+      {
+        "displayName": "Google Folder", 
+        "labels": [
+          {
+            "valueType": "INT64", 
+            "description": "Numeric id of the folder.", 
+            "key": "folder_id"
+          }
+        ], 
+        "type": "folder", 
+        "description": "A Google Cloud Platform folder."
+      }, 
+      {
+        "displayName": "Google Project", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource (e.g., my-project).", 
+            "key": "project_id"
+          }
+        ], 
+        "type": "project", 
+        "description": "A Google project."
+      }, 
+      {
+        "displayName": "Test Matrix", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Unique identifier of the matrix.", 
+            "key": "matrix_id"
+          }
+        ], 
+        "type": "testservice_matrix", 
+        "description": "A Test Matrix in the Google Cloud Test Lab service."
+      }, 
+      {
+        "displayName": "Service Account", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource (e.g., my-project).", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The service account email id, e.g. \"account123@proj123.iam.gserviceaccount.com\".", 
+            "key": "email_id"
+          }, 
+          {
+            "description": "The unique id of the service account, e.g. \"113948692397867021414\".", 
+            "key": "unique_id"
+          }
+        ], 
+        "type": "service_account", 
+        "description": "A service account."
+      }, 
+      {
+        "displayName": "Deployment", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Name that uniquely identifies the deployment within a project.", 
+            "key": "name"
+          }
+        ], 
+        "type": "deployment", 
+        "description": "A Deployment Manager deployment."
+      }, 
+      {
+        "displayName": "Deployment Manager Type", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Name that uniquely identifies the type within a project.", 
+            "key": "name"
+          }
+        ], 
+        "type": "deployment_manager_type", 
+        "description": "A Deployment Manager type."
+      }, 
+      {
+        "displayName": "Deployment Manager Manifest", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Name that uniquely identifies the manifest within a project.", 
+            "key": "manifest_name"
+          }, 
+          {
+            "description": "Name of the deployment.", 
+            "key": "deployment_name"
+          }
+        ], 
+        "type": "deployment_manager_manifest", 
+        "description": "A Deployment Manager manifest which is used to specify the contents of a deployment."
+      }, 
+      {
+        "displayName": "Deployment Manager Operation", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Name that uniquely identifies the operation within a project.", 
+            "key": "operation_name"
+          }
+        ], 
+        "type": "deployment_manager_operation", 
+        "description": "A Deployment Manager operation."
+      }, 
+      {
+        "displayName": "Deployment Manager Resource", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "Name of the resource, unique within a deployment.", 
+            "key": "resource_name"
+          }, 
+          {
+            "description": "Name of the deployment.", 
+            "key": "deployment_name"
+          }
+        ], 
+        "type": "deployment_manager_resource", 
+        "description": "Deployment Manager's record of Google Cloud Platform resources in a Deployment, such as a VM or a bucket."
+      }, 
+      {
+        "displayName": "Cloud Datastore Database", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The unique id of the database.", 
+            "key": "database_id"
+          }
+        ], 
+        "type": "datastore_database", 
+        "description": "A Cloud Datastore database."
+      }, 
+      {
+        "displayName": "Cloud Datastore Index", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The database the index belongs to.", 
+            "key": "database_id"
+          }, 
+          {
+            "description": "The unique id of the index.", 
+            "key": "index_id"
+          }
+        ], 
+        "type": "datastore_index", 
+        "description": "A Cloud Datastore index."
+      }, 
+      {
+        "displayName": "Cloud KMS Key Ring", 
+        "labels": [
+          {
+            "description": "The identifier of the GCP project associated with this resource, such as \"my-project\".", 
+            "key": "project_id"
+          }, 
+          {
+            "description": "The region Key Ring belongs to.", 
+            "key": "location"
+          }, 
+          {
+            "description": "Key Ring Identifier.", 
+            "key": "key_ring_id"
+          }
+        ], 
+        "type": "cloudkms_keyring", 
+        "description": "Collection of cryptographic keys."
+      }
+    ]
+  }, 
+  "headers": {
+    "status": "200", 
+    "content-length": "59455", 
+    "x-xss-protection": "1; mode=block", 
+    "content-location": "https://logging.googleapis.com/v2/monitoredResourceDescriptors?alt=json", 
+    "x-content-type-options": "nosniff", 
+    "transfer-encoding": "chunked", 
+    "vary": "Origin, X-Origin, Referer", 
+    "server": "ESF", 
+    "-content-encoding": "gzip", 
+    "cache-control": "private", 
+    "date": "Tue, 12 Mar 2019 11:17:21 GMT", 
+    "x-frame-options": "SAMEORIGIN", 
+    "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,44,43,39\"", 
+    "content-type": "application/json; charset=UTF-8"
+  }
+}

@@ -183,3 +183,16 @@ class LogTest(BaseTest):
             session_factory=factory)
         resource = p.run()
         self.assertEqual(len(resource), 3)
+
+
+class LogMonitoredResourceDescriptorTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('log-monitored-resource', project_id)
+        p = self.load_policy({
+            'name': 'log-monitored-resource',
+            'resource': 'gcp.log-monitored-resource'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 111)

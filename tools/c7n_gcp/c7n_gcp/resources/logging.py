@@ -131,3 +131,14 @@ class Log(QueryResourceManager):
         enum_spec = ('list', 'logNames[]', None)
         scope_key = 'parent'
         scope_template = "projects/{}"
+
+
+@resources.register('log-monitored-resource')
+class LogMonitoredResourceDescriptor(QueryResourceManager):
+
+    class resource_type(TypeInfo):
+        service = 'logging'
+        version = 'v2'
+        component = 'monitoredResourceDescriptors'
+        enum_spec = ('list', 'resourceDescriptors[]', None)
+        scope = 'global'
