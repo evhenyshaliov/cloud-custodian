@@ -91,3 +91,16 @@ class LogProjectMetricsTest(BaseTest):
             "project_id": project_id,
         })
         self.assertEqual(metric['name'], metric_name)
+
+
+class LogProjectTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('log-project', project_id)
+        p = self.load_policy({
+            'name': 'log-project',
+            'resource': 'gcp.log-project'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 3)
