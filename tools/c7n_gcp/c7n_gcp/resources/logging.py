@@ -83,3 +83,21 @@ class LogProject(QueryResourceManager):
         enum_spec = ('list', 'logNames[]', None)
         scope_key = 'parent'
         scope_template = "projects/{}"
+
+
+@resources.register('log-projects-exclusion')
+class LogProjectExclusion(QueryResourceManager):
+
+    class resource_type(TypeInfo):
+        service = 'logging'
+        version = 'v2'
+        component = 'projects.exclusions'
+        enum_spec = ('list', 'exclusions[]', None)
+        scope_key = 'parent'
+        scope_template = "projects/{}"
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query('get', {
+                'name': 'projects/{project_id}/exclusions/{exclusion_id}'.format(
+                    **resource_info)})

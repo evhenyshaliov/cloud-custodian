@@ -104,3 +104,35 @@ class LogProjectTest(BaseTest):
             session_factory=factory)
         resource = p.run()
         self.assertEqual(len(resource), 3)
+
+
+class LogProjectExclusionTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('log-projects-exclusion', project_id)
+        p = self.load_policy({
+            'name': 'log-projects-exclusion',
+            'resource': 'gcp.log-projects-exclusion'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 1)
+
+    def test_get_projects_exclusion(self):
+        project_id = 'test-project-232910'
+        exclusion_name = "exclusions"
+        factory = self.replay_flight_data(
+            'log-projects-exclusion-get', project_id)
+
+        p = self.load_policy(
+            {
+                'name': 'log-projects-exclusion-get',
+                'resource': 'gcp.log-projects-exclusion'
+            },
+            session_factory=factory)
+
+        resource = p.resource_manager.get_resource({
+            "exclusion_id": exclusion_name,
+            "project_id": project_id,
+        })
+        self.assertEqual(resource['name'], exclusion_name)
