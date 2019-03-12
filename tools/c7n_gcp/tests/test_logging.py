@@ -65,3 +65,29 @@ class LogSinkTest(BaseTest):
             "project_id": project_id,
         })
         self.assertEqual(sink['name'], sink_name)
+
+
+class LogProjectMetricsTest(BaseTest):
+
+    def test_query(self):
+        project_id = 'test-project-232910'
+        factory = self.replay_flight_data('log-projects-metric-get', project_id)
+        p = self.load_policy({
+            'name': 'log-projects-metric',
+            'resource': 'gcp.log-projects-metric'},
+            session_factory=factory)
+        resource = p.run()
+        self.assertEqual(len(resource), 1)
+
+    def test_get_projects_metric(self):
+        project_id = 'test-project-232910'
+        metric_name = "test"
+        factory = self.replay_flight_data(
+            'log-projects-metric-query', project_id)
+        p = self.load_policy({'name': 'log-projects-metric', 'resource': 'gcp.log-projects-metric'},
+                             session_factory=factory)
+        metric = p.resource_manager.get_resource({
+            "name": metric_name,
+            "project_id": project_id,
+        })
+        self.assertEqual(metric['name'], metric_name)
