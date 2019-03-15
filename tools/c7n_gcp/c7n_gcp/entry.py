@@ -30,6 +30,7 @@ import c7n_gcp.resources.loadbalancer
 import c7n_gcp.resources.logging
 import c7n_gcp.resources.mlengine
 import c7n_gcp.resources.network
+import c7n_gcp.resources.container
 import c7n_gcp.resources.pubsub
 import c7n_gcp.resources.resourcemanager
 import c7n_gcp.resources.service
