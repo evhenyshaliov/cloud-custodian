@@ -54,6 +54,14 @@ class ResourceQuery(object):
             if session.get_default_zone():
                 params['zone'] = session.get_default_zone()
 
+        # unwraps the filter values that were added
+        # to params in get_resource_query()
+        if m.scope == 'query' and 'filter' in params:
+            query_params = params['filter'][0]
+            del(params['filter'])
+            for key, value in query_params.items():
+                params[key] = value
+
         enum_op, path, extra_args = m.enum_spec
         if extra_args:
             params.update(extra_args)
