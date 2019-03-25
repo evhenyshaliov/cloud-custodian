@@ -41,7 +41,7 @@ class ResourceQuery(object):
             m.service, m.version, m.component)
 
         # depends on resource scope
-        if m.scope in ('project', 'zone'):
+        if m.scope in ('project', 'zone', 'query'):
             project = session.get_default_project()
             if m.scope_template:
                 project = m.scope_template.format(project)
@@ -53,6 +53,14 @@ class ResourceQuery(object):
         if m.scope == 'zone':
             if session.get_default_zone():
                 params['zone'] = session.get_default_zone()
+
+        # unwraps the filter values that were added
+        # to params in get_resource_query()
+        if m.scope == 'query' and 'filter' in params:
+            query_params = params['filter'][0]
+            del(params['filter'])
+            for key, value in query_params.items():
+                params[key] = value
 
         enum_op, path, extra_args = m.enum_spec
         if extra_args:
