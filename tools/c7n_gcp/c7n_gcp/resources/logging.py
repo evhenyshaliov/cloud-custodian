@@ -129,8 +129,7 @@ class Log(QueryResourceManager):
         version = 'v2'
         component = 'logs'
         enum_spec = ('list', 'logNames[]', None)
-        scope_key = 'parent'
-        scope_template = "projects/{}"
+        scope = 'query'
 
 
 @resources.register('log-monitored-resource')

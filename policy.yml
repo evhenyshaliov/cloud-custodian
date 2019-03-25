@@ -1,0 +1,5 @@
+policies:
+    - name: my-first-policy
+      query:
+        - parent: projects/cloud-custodian-190204
+      resource: gcp.log
