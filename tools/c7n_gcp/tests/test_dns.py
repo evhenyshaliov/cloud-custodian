@@ -21,7 +21,7 @@ class DnsManagedZoneTest(BaseTest):
         project_id = 'cloud-custodian'
         managed_zone_name = 'custodian'
         session_factory = self.replay_flight_data(
-            'managed-zone-query', project_id=project_id)
+            'dns-managed-zone-query', project_id=project_id)
 
         policy = self.load_policy(
             {'name': 'gcp-dns-managed-zone-dryrun',
@@ -35,7 +35,7 @@ class DnsManagedZoneTest(BaseTest):
         project_id = 'cloud-custodian'
         managed_zone_name = 'custodian'
         session_factory = self.replay_flight_data(
-            'managed-zone-get', project_id=project_id)
+            'dns-managed-zone-get', project_id=project_id)
 
         policy = self.load_policy(
             {'name': 'gcp-dns-managed-zone-dryrun',
@@ -53,7 +53,7 @@ class DnsPolicyTest(BaseTest):
         project_id = 'cloud-custodian'
         policy_name = 'custodian'
         session_factory = self.replay_flight_data(
-            'policy-query', project_id=project_id)
+            'dns-policy-query', project_id=project_id)
 
         policy = self.load_policy(
             {'name': 'gcp-dns-policy-dryrun',
@@ -67,7 +67,7 @@ class DnsPolicyTest(BaseTest):
         project_id = 'cloud-custodian'
         policy_name = 'custodian'
         session_factory = self.replay_flight_data(
-            'policy-get', project_id=project_id)
+            'dns-policy-get', project_id=project_id)
 
         policy = self.load_policy(
             {'name': 'gcp-dns-policy-dryrun',
