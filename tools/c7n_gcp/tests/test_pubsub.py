@@ -46,6 +46,21 @@ class PubSubTopicTest(BaseTest):
             {'project_id': project_id, 'topic_id': pubsub_topic_name})
         self.assertEqual(pubsub_topic_resource['name'], pubsub_topic_name)
 
+    def test_pubsub_topic_iam_policy_get(self):
+        resource = 'projects/cloud-custodian/topics/custodian'
+        etag = 'ACAB'
+        session_factory = self.replay_flight_data(
+            'pubsub-topic-iam-policy-get')
+
+        policy = self.load_policy(
+            {'name': 'pubsub-topic-iam-policy-dryrun',
+             'resource': 'gcp.pubsub-topic-iam-policy'},
+            session_factory=session_factory)
+
+        pubsub_topic_iam_policy_resource = policy.resource_manager.get_resource(
+            {'resource': resource})
+        self.assertEqual(pubsub_topic_iam_policy_resource['etag'], etag)
+
 
 class PubSubSubscriptionTest(BaseTest):
 
@@ -78,6 +93,21 @@ class PubSubSubscriptionTest(BaseTest):
             {'project_id': project_id, 'name': pubsub_subscription_name})
         self.assertEqual(pubsub_subscription_resource['name'], pubsub_subscription_name)
 
+    def test_pubsub_subscription_iam_policy_get(self):
+        resource = 'projects/cloud-custodian/subscriptions/custodian'
+        etag = 'ACAB'
+        session_factory = self.replay_flight_data(
+            'pubsub-subscription-iam-policy-get')
+
+        policy = self.load_policy(
+            {'name': 'pubsub-subscription-iam-policy-dryrun',
+             'resource': 'gcp.pubsub-subscription-iam-policy'},
+            session_factory=session_factory)
+
+        pubsub_subscription_iam_policy_resource = policy.resource_manager.get_resource(
+            {'resource': resource})
+        self.assertEqual(pubsub_subscription_iam_policy_resource['etag'], etag)
+
 
 class PubSubSnapshotTest(BaseTest):
 
@@ -94,3 +124,18 @@ class PubSubSnapshotTest(BaseTest):
 
         pubsub_snapshot_resources = policy.run()
         self.assertEqual(pubsub_snapshot_resources[0]['name'], pubsub_snapshot_name)
+
+    def test_pubsub_subscription_iam_policy_get(self):
+        resource = 'projects/cloud-custodian/snapshots/custodian'
+        etag = 'ACAB'
+        session_factory = self.replay_flight_data(
+            'pubsub-snapshot-iam-policy-get')
+
+        policy = self.load_policy(
+            {'name': 'pubsub-snapshot-iam-policy-dryrun',
+             'resource': 'gcp.pubsub-snapshot-iam-policy'},
+            session_factory=session_factory)
+
+        pubsub_snapshot_iam_policy_resource = policy.resource_manager.get_resource(
+            {'resource': resource})
+        self.assertEqual(pubsub_snapshot_iam_policy_resource['etag'], etag)

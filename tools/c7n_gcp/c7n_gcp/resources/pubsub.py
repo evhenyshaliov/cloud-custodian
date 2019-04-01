@@ -36,6 +36,24 @@ class PubSubTopic(QueryResourceManager):
                 'get', {'topic': resource_info['topic_id']})
 
 
+@resources.register('pubsub-topic-iam-policy')
+class PubSubTopicIamPolicy(QueryResourceManager):
+
+    def resources(self, query=None):
+        raise NotImplementedError('Action list not implemented')
+
+    class resource_type(TypeInfo):
+        service = 'pubsub'
+        version = 'v1'
+        component = 'projects.topics'
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query(
+                'getIamPolicy', verb_arguments={
+                    'resource': resource_info['resource']})
+
+
 @resources.register('pubsub-subscription')
 class PubSubSubscription(QueryResourceManager):
 
@@ -53,8 +71,27 @@ class PubSubSubscription(QueryResourceManager):
                 'get', {'subscription': resource_info['name']})
 
 
+@resources.register('pubsub-subscription-iam-policy')
+class PubSubSubscriptionIamPolicy(QueryResourceManager):
+
+    def resources(self, query=None):
+        raise NotImplementedError('Action list not implemented')
+
+    class resource_type(TypeInfo):
+        service = 'pubsub'
+        version = 'v1'
+        component = 'projects.subscriptions'
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query(
+                'getIamPolicy', verb_arguments={
+                    'resource': resource_info['resource']})
+
+
 @resources.register('pubsub-snapshot')
 class PubSubSnapshot(QueryResourceManager):
+
     class resource_type(TypeInfo):
         service = 'pubsub'
         version = 'v1'
@@ -62,3 +99,21 @@ class PubSubSnapshot(QueryResourceManager):
         enum_spec = ('list', 'snapshots[]', None)
         scope_template = 'projects/{}'
         id = 'name'
+
+
+@resources.register('pubsub-snapshot-iam-policy')
+class PubSubSnapshotIamPolicy(QueryResourceManager):
+
+    def resources(self, query=None):
+        raise NotImplementedError('Action list not implemented')
+
+    class resource_type:
+        service = 'pubsub'
+        version = 'v1'
+        component = 'projects.snapshots'
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query(
+                'getIamPolicy', verb_arguments={
+                    'resource': resource_info['resource']})
