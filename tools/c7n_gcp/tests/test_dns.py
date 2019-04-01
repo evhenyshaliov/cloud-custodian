@@ -77,3 +77,20 @@ class DnsPolicyTest(BaseTest):
         policy_resource = policy.resource_manager.get_resource(
             {'name': policy_name, 'project_id': project_id})
         self.assertEqual(policy_resource['name'], policy_name)
+
+
+class DnsProjectTest(BaseTest):
+
+    def test_project_get(self):
+        project_id = 'cloud-custodian'
+        session_factory = self.replay_flight_data(
+            'dns-project-get', project_id=project_id)
+
+        policy = self.load_policy(
+            {'name': 'gcp-dns-project-dryrun',
+             'resource': 'gcp.dns-project'},
+            session_factory=session_factory)
+
+        project_resource = policy.resource_manager.get_resource(
+            {'project_id': project_id})
+        self.assertEqual(project_resource['id'], project_id)

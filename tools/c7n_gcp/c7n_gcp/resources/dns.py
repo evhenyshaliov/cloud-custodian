@@ -49,3 +49,20 @@ class DnsPolicy(QueryResourceManager):
             return client.execute_query(
                 'get', {'project': resource_info['project_id'],
                         'policy': resource_info['name']})
+
+
+@resources.register('dns-project')
+class DNSProject(QueryResourceManager):
+
+    def resources(self, query=None):
+        raise NotImplementedError('Action list not implemented')
+
+    class resource_type(TypeInfo):
+        service = 'dns'
+        version = 'v1beta2'
+        component = 'projects'
+
+        @staticmethod
+        def get(client, resource_info):
+            return client.execute_query(
+                'get', {'project': resource_info['project_id']})
