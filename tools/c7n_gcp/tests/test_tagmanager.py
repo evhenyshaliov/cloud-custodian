@@ -16,6 +16,7 @@ from gcp_common import BaseTest
 
 class TestTagManagerAccounts(BaseTest):
 
+    def test_models_query(self):
     def test_accounts_query(self):
         session_factory = self.record_flight_data(
             'tagmanager-account')
@@ -30,6 +31,7 @@ class TestTagManagerAccounts(BaseTest):
         resources = policy.run()
         self.assertEqual(len(resources), 1)
 
+    def test_models_get(self):
     def test_accounts_get(self):
         accountId = "4701444124"
 
