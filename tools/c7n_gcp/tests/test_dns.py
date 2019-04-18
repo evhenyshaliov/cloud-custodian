@@ -77,3 +77,20 @@ class DnsPolicyTest(BaseTest):
         policy_resource = policy.resource_manager.get_resource(
             {'name': policy_name, 'project_id': project_id})
         self.assertEqual(policy_resource['name'], policy_name)
+
+
+class DnsResourceRecordSetTest(BaseTest):
+
+    def test_rrset_query(self):
+        project_id = 'cloud-custodian'
+        rrset_name = 'custodian.ns-gcp-private.googledomains.com.'
+        session_factory = self.replay_flight_data(
+            'dns-rrset-query', project_id=project_id)
+
+        policy = self.load_policy(
+            {'name': 'gcp-dns-rrset-dryrun',
+             'resource': 'gcp.dns-rrset'},
+            session_factory=session_factory)
+
+        policy_resources = policy.run()
+        self.assertEqual(policy_resources[1]['name'], rrset_name)

@@ -1,0 +1,46 @@
+{
+  "body": {
+    "rrsets": [
+      {
+        "rrdatas": [
+          "ns-cloud-b1.googledomains.com.", 
+          "ns-cloud-b2.googledomains.com.", 
+          "ns-cloud-b3.googledomains.com.", 
+          "ns-cloud-b4.googledomains.com."
+        ], 
+        "kind": "dns#resourceRecordSet", 
+        "name": "custodian.ns-gcp-private.googledomains.com.", 
+        "ttl": 21600, 
+        "type": "NS", 
+        "signatureRrdatas": []
+      }, 
+      {
+        "rrdatas": [
+          "ns-cloud-b1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300"
+        ], 
+        "kind": "dns#resourceRecordSet", 
+        "name": "custodian.ns-gcp-private.googledomains.com.", 
+        "ttl": 21600, 
+        "type": "SOA", 
+        "signatureRrdatas": []
+      }
+    ], 
+    "kind": "dns#resourceRecordSetsListResponse"
+  }, 
+  "headers": {
+    "status": "200", 
+    "content-length": "755", 
+    "x-xss-protection": "1; mode=block", 
+    "content-location": "https://www.googleapis.com/dns/v1beta2/projects/cloud-custodian/managedZones/custodian/rrsets?alt=json",
+    "x-content-type-options": "nosniff", 
+    "transfer-encoding": "chunked", 
+    "vary": "Origin, X-Origin, Referer", 
+    "server": "ESF", 
+    "-content-encoding": "gzip", 
+    "cache-control": "private", 
+    "date": "Thu, 18 Apr 2019 15:37:41 GMT", 
+    "x-frame-options": "SAMEORIGIN", 
+    "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,44,43,39\"", 
+    "content-type": "application/json; charset=UTF-8"
+  }
+}

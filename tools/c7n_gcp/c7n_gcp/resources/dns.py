@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from c7n_gcp.provider import resources
-from c7n_gcp.query import QueryResourceManager, TypeInfo
+from c7n_gcp.query import QueryResourceManager, TypeInfo, ChildResourceManager, ChildTypeInfo
 
 
 @resources.register('dns-managed-zone')
@@ -49,3 +49,21 @@ class DnsPolicy(QueryResourceManager):
             return client.execute_query(
                 'get', {'project': resource_info['project_id'],
                         'policy': resource_info['name']})
+
+
+@resources.register('dns-rrset')
+class DnsResourceRecordSet(ChildResourceManager):
+
+    class resource_type(ChildTypeInfo):
+        service = 'dns'
+        version = 'v1beta2'
+        component = 'resourceRecordSets'
+        enum_spec = ('list', 'rrsets[]', None)
+        scope = 'project'
+        id = 'name'
+        parent_spec = {
+            'resource': 'dns-managed-zone',
+            'child_enum_params': [
+                ('name', 'managedZone')
+            ]
+        }
