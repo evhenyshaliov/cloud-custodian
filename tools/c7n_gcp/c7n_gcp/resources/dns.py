@@ -67,3 +67,21 @@ class DnsResourceRecordSet(ChildResourceManager):
                 ('name', 'managedZone')
             ]
         }
+
+
+@resources.register('dns-key')
+class DnsKey(ChildResourceManager):
+
+    class resource_type(ChildTypeInfo):
+        service = 'dns'
+        version = 'v1beta2'
+        component = 'dnsKeys'
+        enum_spec = ('list', 'dnsKeys[]', None)
+        scope = 'project'
+        id = 'name'
+        parent_spec = {
+            'resource': 'dns-managed-zone',
+            'child_enum_params': [
+                ('name', 'managedZone')
+            ]
+        }

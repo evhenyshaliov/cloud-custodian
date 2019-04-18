@@ -94,3 +94,20 @@ class DnsResourceRecordSetTest(BaseTest):
 
         policy_resources = policy.run()
         self.assertEqual(policy_resources[1]['name'], rrset_name)
+
+
+class DnsKeyTest(BaseTest):
+
+    def test_key_query(self):
+        project_id = 'cloud-custodian'
+        key_id = '1'
+        session_factory = self.replay_flight_data(
+            'dns-key-query', project_id=project_id)
+
+        policy = self.load_policy(
+            {'name': 'gcp-key-dryrun',
+             'resource': 'gcp.dns-key'},
+            session_factory=session_factory)
+
+        policy_resources = policy.run()
+        self.assertEqual(policy_resources[1]['id'], key_id)

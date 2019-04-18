@@ -1,0 +1,52 @@
+{
+  "body": {
+    "dnsKeys": [
+      {
+        "keyTag": 36122, 
+        "kind": "dns#dnsKey", 
+        "algorithm": "rsasha256", 
+        "creationTime": "2019-04-18T15:36:11.665Z", 
+        "keyLength": 2048, 
+        "digests": [
+          {
+            "type": "sha256", 
+            "digest": "F16CE9C01286C7CF1EA97AAA6F775CF2E1FBC6E14C201FE6B83B44BF6992A69E"
+          }
+        ], 
+        "publicKey": "AwEAAckYV2WgStFeDW6xgcanAh2MseEim365kypKyLiP323HRy4yXUaFkwvBvKn5TDtQxgagR0xx2csvQe41M7+IUCf2g/QtRTR/ZQneb/rTTL0v+mXPkI7kF0nWu6CDOn8G+wLkKcZR28XwcrlFhPWTw5dJVDe43QYpZHNoouILAmUpmyyO8om9jVBv4xcCBI+uRNfoCeCTvRTaKGTdM9wOipQ6hZjIzh295YwBVK8Upmbk4IIJrSjwxzYfpfRqxpTvO3uFz4XKg1JMGUgkDUlNfhKi+x4YquUbDVR8tAfFpyxoW/weNeWgiKJcdDWr11YaP0Oq8AKHRkyBpw0ViQSbsHc=", 
+        "type": "keySigning", 
+        "id": "0", 
+        "isActive": true
+      }, 
+      {
+        "keyTag": 31869, 
+        "kind": "dns#dnsKey", 
+        "algorithm": "rsasha256", 
+        "creationTime": "2019-04-18T15:36:11.833Z", 
+        "keyLength": 1024, 
+        "digests": [], 
+        "publicKey": "AwEAAYc2SpVmBVGbkkipGgWPbG+ZQM6t9zODoyXPtV96Thws4f5PXMysvEBkEdIiA6F/uhBaCy3PaKE2muofL95M6H3BJED9TT3KyroRNp3jPFlW2SpEUJ9p2tK0q8E3lWLmmKv4VJVpMLJRExNiFOK3bDizSJ3yt6eKyGxN8EO/Awjn", 
+        "type": "zoneSigning", 
+        "id": "1", 
+        "isActive": true
+      }
+    ], 
+    "kind": "dns#dnsKeysListResponse"
+  }, 
+  "headers": {
+    "status": "200", 
+    "content-length": "1292", 
+    "x-xss-protection": "1; mode=block", 
+    "content-location": "https://www.googleapis.com/dns/v1beta2/projects/cloud-custodian/managedZones/custodian/dnsKeys?alt=json",
+    "x-content-type-options": "nosniff", 
+    "transfer-encoding": "chunked", 
+    "vary": "Origin, X-Origin, Referer", 
+    "server": "ESF", 
+    "-content-encoding": "gzip", 
+    "cache-control": "private", 
+    "date": "Thu, 18 Apr 2019 15:47:06 GMT", 
+    "x-frame-options": "SAMEORIGIN", 
+    "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,44,43,39\"", 
+    "content-type": "application/json; charset=UTF-8"
+  }
+}
