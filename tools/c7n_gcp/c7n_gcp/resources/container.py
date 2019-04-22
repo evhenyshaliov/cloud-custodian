@@ -16,8 +16,8 @@ from c7n_gcp.provider import resources
 from c7n_gcp.query import QueryResourceManager, TypeInfo
 
 
-@resources.register('container-location-cluster')
-class ContainerProjectLocation(QueryResourceManager):
+@resources.register('container-project-location-cluster')
+class ContainerProjectLocationCluster(QueryResourceManager):
 
     class resource_type(TypeInfo):
         service = 'container'

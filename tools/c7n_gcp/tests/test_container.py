@@ -15,15 +15,15 @@
 from gcp_common import BaseTest
 
 
-class ContainerLocationTest(BaseTest):
+class ContainerProjectLocationClusterTest(BaseTest):
 
     def test_locations_query(self):
         project_id = "cloud-custodian"
 
-        factory = self.replay_flight_data('container-location-cluster-query', project_id)
+        factory = self.replay_flight_data('container-project-location-cluster-query', project_id)
         p = self.load_policy(
-            {'name': 'all-container-location-cluster',
-             'resource': 'gcp.container-location-cluster'},
+            {'name': 'all-container-project-location-cluster',
+             'resource': 'gcp.container-project-location-cluster'},
             session_factory=factory)
         resources = p.run()
         self.assertEqual(len(resources), 1)
@@ -31,11 +31,11 @@ class ContainerLocationTest(BaseTest):
     def test_locations_get(self):
         project_id = "cloud-custodian"
         name = "standard-cluster-1"
-        factory = self.replay_flight_data('container-location-cluster-get', project_id)
+        factory = self.replay_flight_data('container-project-location-cluster-get', project_id)
 
         p = self.load_policy(
-            {'name': 'one-container-location-cluster',
-             'resource': 'gcp.container-location-cluster'},
+            {'name': 'one-container-project-location-cluster',
+             'resource': 'gcp.container-project-location-cluster'},
             session_factory=factory)
         instance = p.resource_manager.get_resource(
             {"project_id": project_id,
